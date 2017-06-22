@@ -4,15 +4,21 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { AppRoutingModule } from './app-routing.modules';
+import { SetupSeatsComponent } from './setup-seats/setup-seats.component';
+import { ReserveSeatsComponent } from './reserve-seats/reserve-seats.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SetupSeatsComponent,
+    ReserveSeatsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
