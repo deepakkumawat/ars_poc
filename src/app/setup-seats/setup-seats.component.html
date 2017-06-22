@@ -1,0 +1,72 @@
+<div class="row">
+	<div class="col-xs-12 col-sm-6 col-md-6" [innerHtml]="template">
+	</div>
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<form (ngSubmit)="f.form.valid && renderSeats()" method="POST" #f="ngForm" novalidate>
+		  <div class="form-group">
+		  	<div class="row">
+		  		<div class="col-xs-12 col-sm-6 col-md-6" [ngClass]="{ 'has-error': f.submitted && !row.valid }">
+		  			<label for="exampleInputEmail1">Row</label>
+		    		<input type="number" class="form-control" name="row" placeholder="Enter row" [(ngModel)]="model.row" #row="ngModel">
+		    		<div *ngIf="f.submitted && !row.valid" class="help-block">Row is required</div>
+		  		</div>
+		  		<div class="col-xs-12 col-sm-6 col-md-6" [ngClass]="{ 'has-error': f.submitted && !column.valid }">
+		  			<label for="exampleInputEmail1">Column</label>
+		  			<input type="number" class="form-control" name="column" placeholder="Enter column" [(ngModel)]="model.column" #column="ngModel">
+		  			<div *ngIf="f.submitted && !column.valid" class="help-block">Column is required</div>
+		  		</div>
+		  	</div>
+		  	<small id="emailHelp" class="form-text text-muted">This is the way to create seats.</small>
+		  </div>
+		  <!-- <div class="form-group">
+		    <label for="exampleSelect1">Select Passage Row</label>
+		    <select class="form-control" id="exampleSelect1">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleSelect1">Select Passage Column</label>
+		    <select class="form-control" id="exampleSelect1">
+		      <option>1</option>
+		      <option>2</option>
+		      <option>3</option>
+		      <option>4</option>
+		      <option>5</option>
+		    </select>
+		  </div> -->
+		  <!-- <fieldset class="form-group">
+		    <legend>Radio buttons</legend>
+		    <div class="form-check">
+		      <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+		        Option one is this and that&mdash;be sure to include why it's great
+		      </label>
+		    </div>
+		    <div class="form-check">
+		    <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+		        Option two can be something else and selecting it will deselect option one
+		      </label>
+		    </div>
+		    <div class="form-check disabled">
+		    <label class="form-check-label">
+		        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+		        Option three is disabled
+		      </label>
+		    </div>
+		  </fieldset> -->
+		  <!-- <div class="form-check">
+		    <label class="form-check-label">
+		      <input type="checkbox" class="form-check-input">
+		      Check me out
+		    </label>
+		  </div> -->
+		  <button [disabled]="loading" type="submit" class="btn btn-primary">Submit</button>
+			<img *ngIf="loading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+		</form>
+	</div>
+</div>
