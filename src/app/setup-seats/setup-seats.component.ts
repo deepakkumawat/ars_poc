@@ -9,7 +9,7 @@ export class SetupSeatsComponent implements OnInit {
 
 	model: any = {};
 	template: string = `
-	    <h1>Seats are loading....</h1>
+	    <h1>Seats are loading.....</h1>
 	  `;
     loading = false;
 
