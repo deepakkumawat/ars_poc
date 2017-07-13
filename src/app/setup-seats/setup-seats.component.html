@@ -1,5 +1,15 @@
 <div class="row">
-	<div class="col-xs-12 col-sm-6 col-md-6" [innerHtml]="template">
+	<div class="col-xs-12 col-sm-6 col-md-6">
+		<div [ngGrid]="gridConfig">
+	
+			<div *ngFor="let box of boxes; let i = index" [(ngGridItem)]="box.config" (onItemChange)="updateItem(i, $event)" (onResize)="onResize(i, $event)" (onDrag)="onDrag(i, $event)">
+				<div class="handle">{{box.id}} <div class="box-header-btns pull-right">
+								<a title="Remove widget" (click)="removeWidget(i);">
+									<i class="glyphicon glyphicon-trash"></i>
+								</a>
+							</div></div>
+			</div>
+		</div>
 	</div>
 	<div class="col-xs-12 col-sm-6 col-md-6">
 		<form (ngSubmit)="f.form.valid && renderSeats()" method="POST" #f="ngForm" novalidate>
